@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 24px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .transaction {
+            margin-top: 20px;
+        }
+        .transaction input {
+            padding: 10px;
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .transaction button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .transaction button:hover {
+            background-color: #0056b3;
+        }
+        .balance {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Bank Name</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="withdraw.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Bank Application</h1>
+
+        <!-- Show Balance -->
+        <div class="transaction">
+            <h3>Enter Account Number</h3>
+            <input type="text" id="accountNumber" placeholder="Enter your account number">
+            <button onclick="showBalance()">Show Balance</button>
+        </div>
+
+        <div class="balance" id="balanceDisplay" style="display: none;">
+            <h2>Account Balance</h2>
+            <p>Your account balance for account <span id="accountDisplay"></span> is: $<span id="balance"></span></p>
+        </div>
+
+        <!-- Deposit -->
+        <div class="transaction" id="depositSection" style="display: none;">
+            <h3>Deposit Money</h3>
+            <input type="number" id="depositAmount" placeholder="Enter amount to deposit">
+            <button onclick="deposit()">Deposit</button>
+        </div>
+
+        <!-- Withdraw -->
+        <div class="transaction" id="withdrawSection" style="display: none;">
+            <h3>Withdraw Money</h3>
+            <input type="number" id="withdrawAmount" placeholder="Enter amount to withdraw">
+            <button onclick="withdraw()">Withdraw</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
